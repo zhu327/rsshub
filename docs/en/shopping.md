@@ -62,6 +62,34 @@ Parameter `country` can be found within the url of `Arcteryx` website.
 
 </RouteEn>
 
+### Outlet
+
+<RouteEn author="NavePnow" example="/arcteryx/outlet/us/mens" path="/arcteryx/outlet/:country/:gender" :paramsDesc="['country', 'gender']">
+
+Country
+
+| United States | Canada | United Kingdom |
+| ------------- | ------ | -------------- |
+| us            | ca     | gb             |
+
+gender
+
+| male | female |
+| ---- | ------ |
+| mens | womens |
+
+::: tip
+
+Parameter `country` can be found within the url of `Arcteryx` website.
+
+:::
+
+</RouteEn>
+
+### Regear New Arrivals
+
+<RouteEn author="NavePnow" example="/arcteryx/regear/new-arrivals" path="/arcteryx/regear/new-arrivals" />
+
 ## Bellroy
 
 ### New Releases
@@ -200,14 +228,42 @@ Language
 
 </RouteEn>
 
+## Patagonia
+
+### New Arrivals
+
+<RouteEn author="NavePnow" example="/patagonia/new-arrivals/mens" path="/patagonia/new-arrivals/:category" :paramsDesc="['category, see below']">
+
+| Men's | Women's | Kids' & Baby | Packs & Gear |
+| ----- | ------- | ------------ | ------------ |
+| mens  | womens  | kids         | luggage      |
+
+</RouteEn>
+
+
 ## ShopBack
 
 ### Store
 
 <RouteEn author="nczitzk" example="/shopback/shopee-mart" path="/shopback/:store" :paramsDesc="['Store, can be found in URL']"/>
 
+## Snow Peak
+
+### New Arrivals(USA)
+
+<RouteEn author="NavePnow" example="/snowpeak/us/new-arrivals" path="/snowpeak/us/new-arrivals"/>
+
 ## The Independent
 
 ### PS5 stock UK
 
 <RouteEn author="DIYgod" example="/independent/ps5-stock-uk" path="/independent/ps5-stock-uk"/>
+
+## Zagg
+
+### New Arrivals
+
+<RouteEn author="NavePnow" example="/zagg/new-arrivals/brand=164&cat=3038,3041" path="/zagg/new-arrivals/:query?" :paramsDesc="['query, search page querystring']"/>
+
+For instance, in <https://www.zagg.com/en_us/new-arrivals?brand=164&cat=3038%2C3041>, the query is `brand=164&cat=3038%2C3041`
+
