@@ -327,6 +327,21 @@ Category of news
 
 </Route>
 
+
+### Finance News 财经 - 财经新闻 {#china.com-zhong-hua-wang-finance-news-cai-jing-cai-jing-xin-wen}
+
+<Route author="KingJem" example="/china/finance" path="/china/finance/:category?" paramsDesc={['Category of news. See the form below for details, default is suggest news.']} radar="1">
+
+| 推荐      | TMT | 金融    | 地产    | 消费     | 医药  | 酒业  | IPO观察 |
+| -------  | --- | ------- | ------ | ------- | ----- | ---- | -------|
+| tuijian  | TMT | jinrong | dichan | xiaofei | yiyao | wine | IPO |
+
+> Note: The default news num is  `30`.
+
+> 注意:  默认新闻条数是 `30`。
+
+</Route>
+
 ## cnBeta.COM {#cnbeta.com}
 
 ### 头条资讯 {#cnbeta.com-tou-tiao-zi-xun}
@@ -561,6 +576,52 @@ Categories
 | 科技焦點 | 網絡生活 | 教學評測 | IT Times |
 | -------- | -------- | -------- | -------- |
 | srae001  | srae008  | srae017  | srae021  |
+
+</Route>
+
+## Farmatters {#farmatters}
+
+### Viewpoint {#farmatters-viewpoint}
+
+<Route author="nczitzk" example="/farmatters/news" path="/farmatters/news/:locale?" paramsDesc={['Locale, `zh-CN` or `en-US`, `zh-CN` by default']} radar="1" rssbud="1"/>
+
+### Exclusive {#farmatters-exclusive}
+
+<Route author="nczitzk" example="/farmatters/exclusive" path="/farmatters/exclusive/:locale?" paramsDesc={['Locale, `zh-CN` or `en-US`, `zh-CN` by default']} radar="1" rssbud="1"/>
+
+### Tag {#farmatters-tag}
+
+<Route author="nczitzk" example="/farmatters/tag/1" path="/farmatters/tag/:id/:locale?" paramsDesc={['Tag id, see below', 'Locale, `zh-CN` or `en-US`, `zh-CN` by default']} radar="1" rssbud="1">
+
+| id  | Tag                  | 标签     |
+| --- | -------------------- | -------- |
+| 1   | company              | 上市公司 |
+| 2   | original             | 原创     |
+| 3   | business investment  | 商业投资 |
+| 4   | comments             | 评论     |
+| 5   | agtech               | 农业科技 |
+| 12  | cellular agriculture | 细胞农业 |
+| 17  | vertical farming     | 垂直农业 |
+| 19  | urban agriculture    | 城市农业 |
+| 20  | mechinery            | 农机     |
+| 23  | agfood               | 农产食材 |
+| 25  | alternative protein  | 替代蛋白 |
+| 29  | food waste           | 食物浪费 |
+| 31  | CEA                  | 设施农业 |
+| 36  | agronomy             | 农艺     |
+| 41  | synthetic biology    | 合成生物 |
+
+</Route>
+
+### Wiki {#farmatters-wiki}
+
+<Route author="nczitzk" example="/farmatters/wiki/1" path="/farmatters/wiki/:id/:locale?" paramsDesc={['Category id, see below', 'Locale, `zh-CN` or `en-US`, `zh-CN` by default']} radar="1" rssbud="1">
+
+| id  | Category    | 分类     |
+| --- | ----------- | -------- |
+| 1   | Agriculture | 农业知识 |
+| 2   | Others      | 其他     |
+| 3   | Food        | 食物贴士 |
 
 </Route>
 
@@ -1252,6 +1313,62 @@ IPFS 网关有可能失效，那时候换成其他网关。
 
 </Route>
 
+## Metacritic {#metacritic}
+
+### Games {#metacritic-games}
+
+<Route author="HenryQW nczitzk" example="/metacritic/game" path="/metacritic/game/:sort?/:filter?" paramsDesc={['Sort, see below, `new` for Newest Releases by default', 'Filter']} radar="1" rssbud="1">
+
+| Metascore | User Score | Most Popular | Newest Releases |
+| --------- | ---------- | ------------ | --------------- |
+| metascore | userscore  | popular      | new             |
+
+:::tip
+
+The Filter parameter comes from the corresponding page URL. The following is an example:
+
+The URL of [Action Games to Play on PS5](https://www.metacritic.com/browse/game/all/all/all-time/new/?platform=ps5&genre=action) is <https://www.metacritic.com/browse/game/all/all/all-time/new/?platform=ps5&genre=action>. The Filter parameter is `platform=ps5&genre=action` and the route is [`/metacritic/game/new/platform=ps5&genre=action`](https://rsshub.app/metacritic/game/new/platform=ps5&genre=action)
+
+:::
+
+</Route>
+
+### Movies {#metacritic-movies}
+
+<Route author="nczitzk" example="/metacritic/movie" path="/metacritic/movie/:sort?/:filter?" paramsDesc={['Sort, see below, `new` for Newest Releases by default', 'Filter']} radar="1" rssbud="1">
+
+| Metascore | User Score | Most Popular | Newest Releases |
+| --------- | ---------- | ------------ | --------------- |
+| metascore | userscore  | popular      | new             |
+
+:::tip
+
+The Filter parameter comes from the corresponding page URL. The following is an example:
+
+The URL of [Action Movies to Watch on Netflix](https://www.metacritic.com/browse/movie/all/all/all-time/new/?network=netflix&genre=action) is <https://www.metacritic.com/browse/movie/all/all/all-time/new/?network=netflix&genre=action>. The Filter parameter is `network=netflix&genre=action` and the route is [`/metacritic/movie/new/network=netflix&genre=action`](https://rsshub.app/metacritic/movie/new/network=netflix&genre=action)
+
+:::
+
+</Route>
+
+### TV Shows {#metacritic-tv-shows}
+
+<Route author="nczitzk" example="/metacritic/tv" path="/metacritic/tv/:sort?/:filter?" paramsDesc={['Sort, see below, `new` for Newest Releases by default', 'Filter']} radar="1" rssbud="1">
+
+| Metascore | User Score | Most Popular | Newest Releases |
+| --------- | ---------- | ------------ | --------------- |
+| metascore | userscore  | popular      | new             |
+
+:::tip
+
+The Filter parameter comes from the corresponding page URL. The following is an example:
+
+The URL of [Documentary TV Shows to Watch on Prime Video](https://www.metacritic.com/browse/tv/all/all/all-time/new/?network=prime-video&genre=documentary) is <https://www.metacritic.com/browse/tv/all/all/all-time/new/?network=prime-video&genre=documentary>. The Filter parameter is `network=prime-video&genre=documentary` and the route is [`/metacritic/tv/new/network=prime-video&genre=documentary`](https://rsshub.app/metacritic/tv/new/network=prime-video&genre=documentary)
+
+:::
+
+</Route>
+
 ## Mirror {#mirror}
 
 ### User {#mirror-user}
@@ -1758,8 +1875,6 @@ Member ID
 | 5         | 加藤 史帆    |
 | 4         | 影山 優佳    |
 | 2         | 潮 紗理菜    |
-
-> Note: The personal blogs of the fourth-generation members have not been opened yet. The unified blog number is `2000`.
 
 </Route>
 
@@ -2372,30 +2487,6 @@ Supported sub-sites:
 ### 首页 {#chan-pin-chen-si-lu-shou-ye}
 
 <Route author="nczitzk" example="/pmthinking" path="/pmthinking" />
-
-## 城农 Growin' City {#cheng-nong-growin-city}
-
-### 城农资讯观点 {#cheng-nong-growin-city-cheng-nong-zi-xun-guan-dian}
-
-<Route author="nczitzk" example="/growincity/news" path="/growincity/news/:id?" anticrawler="1" paramsDesc={['分类 id，见下表，默认为原创内容']}>
-
-| 原创内容 | 商业投资 | 观点评论 | 农业科技 |
-| -------- | -------- | -------- | -------- |
-| 48       | 55       | 88       | 98       |
-
-| 农艺管理 | 农业机械 | 设施农业 | 畜牧水产 |
-| -------- | -------- | -------- | -------- |
-| 101      | 83       | 85       | 87       |
-
-| 食品科技 | 科技产品 | 食品创新 | 研究报告 |
-| -------- | -------- | -------- | -------- |
-| 86       | 100      | 99       | 76       |
-
-| 教育拓展 | 展会培训 | 业界访谈 |
-| -------- | -------- | -------- |
-| 61       | 77       | 72       |
-
-</Route>
 
 ## 抽屉新热榜 {#chou-ti-xin-re-bang}
 

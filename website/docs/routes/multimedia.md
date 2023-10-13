@@ -567,6 +567,12 @@ If you subscribe to [火曜ワイド「境界トラブル解決ラジオ！] (ht
 
 ## JavBus {#javbus}
 
+:::warning
+
+Requests from non-Asia areas will be redirected to login page.
+
+:::
+
 :::tip Language
 
 You can change the language of each route to the languages listed below.
@@ -1022,6 +1028,12 @@ See [Directory](https://www.javlibrary.com/en/star_list.php) to view all stars.
 ### 标签最近更新 {#mqube-biao-qian-zui-jin-geng-xin}
 
 <Route author="hoilc" example="/mqube/tag/UTAU" path="/mqube/tag/:tag" paramsDesc={['标签名称, 可参考`https://mqube.net/search/tag`']} radar="1" rssbud="1"/>
+
+## Netflav {#netflav}
+
+### Index {#netflav-index}
+
+<Route author="TonyRL" example="/netflav" path="/netflav" radar="1"/>
 
 ## NEW 字幕组 {#new-zi-mu-zu}
 
@@ -1548,20 +1560,6 @@ When `mediaType` is `movie`, `sheet` should be:
 ### 新片精品 {#dian-ying-tian-tang-xin-pian-jing-pin}
 
 <Route author="imgss" example="/dytt" path="/dytt" supportBT="1"/>
-
-## 法国国际广播电台 {#fa-guo-guo-ji-guang-bo-dian-tai}
-
-### 滚动新闻 {#fa-guo-guo-ji-guang-bo-dian-tai-gun-dong-xin-wen}
-
-<Route author="nczitzk" example="/rfi/news" path="/rfi/news/:lang?" paramsDesc={['语言，默认为cn']}>
-
-**lang**
-
-| en | cn | fr |
-| --- | --- | --- |
-| 英文 | 中文 | 法文 |
-
-</Route>
 
 ## 高清电台 {#gao-qing-dian-tai}
 

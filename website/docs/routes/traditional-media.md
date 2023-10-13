@@ -10,51 +10,17 @@
 
 ### Channel & Topic {#abc-news-channel-topic}
 
-<Route author="nczitzk" example="/abc" path="/abc/:id?" paramsDesc={['id, can be found in the Channel or Topic page, can also be filled in the `documentId` in the source code of the page, see below, Just In by default']}>
+<Route author="nczitzk" example="/abc" path="/abc/:category?" paramsDesc={['Category, can be found in the URL, can also be filled in with the `documentId` in the source code of the page, `news/justin` as **Just In** by default']}>
 
 :::tip
 
 All Topics in [Topic Library](https://abc.net.au/news/topics) are supported, you can fill in the field after `topic` in its URL, or fill in the `documentId`.
 
-For example, the URL for [Computers and Technology](https://www.abc.net.au/news/topic/computers-and-technology) is <https://www.abc.net.au/news/topic/computers-and-technology>, the field after `topic` is `computers-and-technology`, and the `documentId` of the Topic is `2302`, so the route is [/abc/computers-and-technology](https://rsshub.app/abc/computers-and-technology) and [/abc/2302](https://rsshub.app/abc/2302).
+For example, the URL for [Computer Science](https://www.abc.net.au/news/topic/computer-science) is <https://www.abc.net.au/news/topic/computer-science>, the `category` is `news/topic/computer-science`, and the `documentId` of the Topic is `2302`, so the route is [/abc/news/topic/computer-science](https://rsshub.app/abc/news/topic/computer-science) and [/abc/2302](https://rsshub.app/abc/2302).
 
 The supported channels are all listed in the table below. For other channels, please find the `documentId` in the source code of the channel page and fill it in as above.
 
 :::
-
-The following are some of the supported Channel and Topic ids.
-
-| Just In | Coronavirus | Politics | World |
-| ------- | ----------- | -------- | ----- |
-| justin  | coronavirus | politics | world |
-
-| Asia Pacific | Business | Analysis & Opinion   | Sport |
-| ------------ | -------- | -------------------- | ----- |
-| asia-pacific | business | analysis-and-opinion | sport |
-
-| AFL | Rugby League | Rugby Union | Football |
-| --- | ------------ | ----------- | -------- |
-| afl | rugbyleague  | rugbyunion  | football |
-
-| Cricket | Science | Astronomy (Space) | Computers and Technology |
-| ------- | ------- | ----------------- | ------------------------ |
-| cricket | science | astronomy-space   | computers-and-technology |
-
-| Environment | Archaeology | Health | Exercise and Fitness |
-| ----------- | ----------- | ------ | -------------------- |
-| environment | archaeology | health | exercise-and-fitness |
-
-| Pharmaceuticals | Mental Health | Diet and Nutrition | Arts & Culture |
-| --------------- | ------------- | ------------------ | -------------- |
-| pharmaceuticals | mental-health | diet-and-nutrition | arts-culture   |
-
-| Fact Check | ABC 中文 | 澳洲时政           | 聚焦中港台     |
-| ---------- | -------- | ------------------ | -------------- |
-| factcheck  | chinese  | australia-politics | focus-on-china |
-
-| 观点与分析              | 澳洲华人             | 解读澳洲          | Berita dalam Bahasa Indonesia | Tok Pisin |
-| ----------------------- | -------------------- | ----------------- | ----------------------------- | --------- |
-| analysis-and-opinion-zh | chinese-in-australia | curious-australia | indonesian                    | tok-pisin |
 
 </Route>
 
@@ -425,6 +391,16 @@ Only `s00017` is in English.
 | s00017   | English       |
 | s00018   | Columnist     |
 
+## National Public Radio {#national-public-radio}
+
+### News {#national-public-radio-news}
+
+<Route author="bennyyip" example="/npr/1001" path="/npr/:endpoint?" paramsDesc={['Channel ID, can be found in Official RSS URL, `1001` by default']}>
+
+Provide full article RSS for CBC topics.
+
+</Route>
+
 ## NHK {#nhk}
 
 ### News Web Easy {#nhk-news-web-easy}
@@ -481,13 +457,25 @@ Only `s00017` is in English.
 
 <Route author="nczitzk" example="/now/news/rank" path="/now/news/rank"/>
 
-## NPR {#npr}
+## Radio France Internationale 法国国际广播电台 {#radio-france-internationale-fa-guo-guo-ji-guang-bo-dian-tai}
 
-### News {#npr-news}
+### Generic News {#radio-france-internationale-fa-guo-guo-ji-guang-bo-dian-tai-generic-news}
 
-<Route author="bennyyip" example="/npr/1001" path="/npr/:endpoint?" paramsDesc={['Channel ID, can be found in Official RSS URL, `1001` by default']}>
+<Route author="nczitzk" example="/rfi" path="/rfi/:path*" paramsDesc={['URL path, can be obtained from the URL of the corresponding page, `en` by default']} radar="1">
 
-Provide full article RSS for CBC topics.
+:::tip
+
+-   To subscribe to [English News](https://www.rfi.fr/en/), whose URL is `https://www.rfi.fr/en`, you can get the route as [`/rfi/en`](https://rsshub.app/rfi/en).
+-   To subscribe to [English Europe News](https://www.rfi.fr/en/europe/), whose URL is `https://www.rfi.fr/en/europe`, you can get the route as [`/rfi/en/europe`](https://rsshub.app/rfi/en/europe).
+-   To subscribe to topic [Paris Olympics 2024](https://www.rfi.fr/en/tag/paris-olympics-2024/), whose URL is `https://www.rfi.fr/en/tag/paris-olympics-2024`, you can get the route as [`/rfi/en/tag/paris-olympics-2024`](https://rsshub.app/rfi/en/tag/paris-olympics-2024).
+
+:::
+
+:::caution
+
+This route does not support podcasts, please use the Offical RSS feed instead.
+
+:::
 
 </Route>
 
@@ -2018,6 +2006,8 @@ category 对应的关键词有
 </Route>
 
 ## 澎湃新闻 {#peng-pai-xin-wen}
+
+以下所有路由可使用参数`old`以采取旧全文获取方法. 该方法会另外获取网页中的图片与视频资源. 在原始url追加`?old=yes`以启用.
 
 ### 首页头条 {#peng-pai-xin-wen-shou-ye-tou-tiao}
 
