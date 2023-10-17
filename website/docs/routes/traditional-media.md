@@ -129,6 +129,12 @@ Refer to [Boston.com's feed page](https://www.boston.com/rss-feeds) for tags. Fo
 
 </Route>
 
+## Caixin Global {#caixin-global}
+
+### Latest News {#caixin-global-latest-news}
+
+<Route author="TonyRL" example="/caixinglobal/latest" path="/caixinglobal/latest" radar="1" />
+
 ## Canadian Broadcasting Corporation {#canadian-broadcasting-corporation}
 
 ### News {#canadian-broadcasting-corporation-news}
@@ -511,6 +517,8 @@ Parameters can be obtained from the official website, for instance:
 2. The old routes are deprecated. Please migrate to the new routes documented below
 
 :::
+
+You can use `sophi=true` query parameter to invoke the **experimental** method, which can, if possible, fetch more articles(between 20 and 100) with `limit` given. But some articles from the old method might not be available.
 
 ### Category/Topic/Author {#reuters-lu-tou-she-category-topic-author}
 
