@@ -910,6 +910,12 @@
 
 <Route author="TonyRL" example="/line/today/th/publisher/101048" path="/line/today/:edition/publisher/:id" paramsDesc={['Edition, see table above', 'Channel ID, can be found in URL']} radar="1" />
 
+## Live Universal Awareness Map {#live-universal-awareness-map}
+
+### 实时消息 {#live-universal-awareness-map-shi-shi-xiao-xi}
+
+<Route author="CoderSherlock" example="/liveuamap" path="/liveuamap/:region?" paramsDesc={['region 热点地区，默认为`ukraine`，其他选项见liveuamap.com的三级域名']} anticrawler="1" />
+
 ## LVV2 {#lvv2}
 
 ### 频道 {#lvv2-pin-dao}
@@ -4696,6 +4702,14 @@
   | 简体中文 | 繁体中文 |
   | -------- | -------- |
   | sc       | tc       |
+</Route>
+
+### 消費全攻略 {#xiao-fei-zhe-wei-yuan-hui-xiao-fei-quan-gong-lve}
+
+<Route author="TonyRL" example="/consumer/shopping-guide" path="/consumer/shopping-guide/:category?/:language?" paramsDesc={['分类，见下表，默认为 `trivia`', '语言，见上表，默认为 `tc`']} radar="1">
+  | 冷知識 | 懶人包 | 特集     | 銀髮一族           | 飲食煮意         | 科技達人   | 健康美容          | 規劃人生                    | 消閒娛樂                  | 家品家電        | 親子時光        | 綠色生活     |
+  | ------ | ------ | -------- | ------------------ | ---------------- | ---------- | ----------------- | --------------------------- | ------------------------- | --------------- | --------------- | ------------ |
+  | trivia | tips   | features | silver-hair-market | food-and-cooking | tech-savvy | health-and-beauty | life-and-financial-planning | leisure-and-entertainment | home-appliances | family-and-kids | green-living |
 </Route>
 
 ## 小刀娱乐网 {#xiao-dao-yu-le-wang}
