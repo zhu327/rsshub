@@ -18,19 +18,23 @@
   | news | gl   | resource |
 </Route>
 
-## 4Gamers 新闻 {#4gamers-xin-wen}
+## 4Gamers {#4gamers}
 
-### 分类 {#4gamers-xin-wen-fen-lei}
+### 最新消息 {#4gamers-zui-xin-xiao-xi}
 
-<Route author="hoilc" example="/4gamers/category/352" path="/4gamers/category/:category" paramsDesc={['分类 ID, 可从分类 URL 中找到']} />
+<Route author="TonyRL" example="/4gamers" path="/4gamers" radar="1" />
 
-### 标签 {#4gamers-xin-wen-biao-qian}
+### 分类 {#4gamers-fen-lei}
 
-<Route author="hoilc" example="/4gamers/tag/英雄聯盟" path="/4gamers/tag/:tag" paramsDesc={['标签名, 可在标签 URL 中找到']} />
+<Route author="hoilc" example="/4gamers/category/352" path="/4gamers/category/:category" paramsDesc={['分类 ID，可从分类 URL 中找到']} radar="1" />
 
-### 主題 {#4gamers-xin-wen-zhu-ti}
+### 标签 {#4gamers-biao-qian}
 
-<Route author="bestpika" example="/4gamers/topic/gentlemen-topic" path="/4gamers/topic/:topic" paramsDesc={['主题, 可在首页上方页面内找到']} />
+<Route author="hoilc" example="/4gamers/tag/限時免費" path="/4gamers/tag/:tag" paramsDesc={['标签名，可在标签 URL 中找到']} radar="1" />
+
+### 主題 {#4gamers-zhu-ti}
+
+<Route author="bestpika" example="/4gamers/topic/gentlemen-topic" path="/4gamers/topic/:topic" paramsDesc={['主题，可在首页上方页面内找到']} radar="1" />
 
 ## 5EPLAY {#5eplay}
 
@@ -336,6 +340,18 @@
 ### Java Game Update {#minecraft-java-game-update}
 
 <Route author="TheresaQWQ" example="/minecraft/version" path="/minecraft/version" />
+
+## Modrinth {#modrinth}
+
+### Project versions {#modrinth-project-versions}
+
+<Route author="SettingDust" example="/modrinth/project/sodium/versions" path="/modrinth/project/:id/versions/:routeParams?" paramsDesc={['Id or slug of the Modrinth project','Extra route params. See the table below for options']} radar="1" />
+
+| Name           | Example                                      |
+| -------------- | -------------------------------------------- |
+| loaders        | loaders=fabric\&loaders=quilt\&loaders=forge |
+| game\_versions | game\_versions=1.20.1\&game\_versions=1.20.2 |
+| featured       | featured=true                                |
 
 ## Nintendo {#nintendo}
 
@@ -722,6 +738,14 @@ Example：`https://www.iyingdi.com/tz/people/55547` ，id 是 `55547`
 ### 米游社 - 用户帖子 {#mi-ha-you-mi-you-she-yong-hu-tie-zi}
 
 <Route author="CaoMeiYouRen" example="/mihoyo/bbs/user-post/77005350" path="/mihoyo/bbs/user-post/:uid" paramsDesc={['用户uid']} radar="1" />
+
+### 米游社 - 用户关注动态 {#mi-ha-you-mi-you-she-yong-hu-guan-zhu-dong-tai}
+
+<Route author="CaoMeiYouRen" example="/mihoyo/bbs/timeline" path="/mihoyo/bbs/timeline" radar="1" configRequired="1">
+  :::warning
+  用户关注动态需要米游社登录后的 Cookie 值，所以只能自建，详情见部署页面的配置模块。
+  :::
+</Route>
 
 ### 原神 {#mi-ha-you-yuan-shen}
 
