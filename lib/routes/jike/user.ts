@@ -55,7 +55,7 @@ async function handler(ctx) {
     };
 
     const items = await Promise.all(
-        data.posts.map(async (item) => {
+        data.posts.map(async (item, index) => {
             const typeMap = {
                 ORIGINAL_POST: '发布',
                 REPOST: '转发',
@@ -147,26 +147,8 @@ async function handler(ctx) {
 
             if (id === 'wenhao1996' && item.topic.id === '553870e8e4b0cafb0a1bef68') {
                 single.link = item.urlsInText[0].url;
-
-                const { data } = await got({
-                    method: 'get',
-                    url: single.link,
-                    headers: {
-                        Referer: `https://m.okjike.com/users/${id}`,
-                    },
-                });
-                const $$ = load(data);
-                $$('span.num,span.arrow').remove();
-
-                single.title = `一觉醒来世界发生了什么 ${$$('title').text()}`;
-
-                single.description = '';
-                $$('div.container')
-                    .find('li.item')
-                    // eslint-disable-next-line array-callback-return
-                    .map((i, j) => {
-                        single.description += `<a href="${$$(j).find('a').attr('href')}">${$$(j).find('a').text()}</a><br>`;
-                    });
+                single.title = $('div.text').eq(index).text().replace(/www\.\w+\.[a-zA-Z]+/g, ',');
+                single.description = $('div.text').eq(index).html();
             }
 
             return single;

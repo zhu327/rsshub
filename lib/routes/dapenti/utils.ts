@@ -7,7 +7,7 @@ import timezone from '@/utils/timezone';
 
 export default {
     parseFeed: async ({ subjectid }) => {
-        const url = `https://www.dapenti.com/blog/blog.asp?name=xilei&subjectid=${subjectid}`;
+        const url = `https://www.dapenti.com/blog/index.asp`;
         const listRes = await got({
             method: 'get',
             url,
@@ -23,7 +23,9 @@ export default {
         const data = iconv.decode(listRes.data, 'gb2312');
         const $ = load(data);
         // 只取最近的三个，取全文rss
-        const list = $('li', 'ul').slice(0, 3).get();
+        var list = $('li', 'ul').slice(0, 25).filter(function () {
+            return $(this).find('a[title*="喷嚏图卦"]').length > 0;
+        }).get();
 
         const result_item = await Promise.all(
             list.map((item) =>

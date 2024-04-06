@@ -1,9 +1,6 @@
 import { Route } from '@/types';
 import got from '@/utils/got';
 import { load } from 'cheerio';
-import { parseDate } from '@/utils/parse-date';
-import { art } from '@/utils/render';
-import path from 'node:path';
 import { getCurrentPath } from '@/utils/helpers';
 const __dirname = getCurrentPath(import.meta.url);
 
@@ -33,36 +30,20 @@ async function handler(ctx) {
     const currentUrl = 'https://idai.ly';
 
     const { data: response } = await got(apiUrl);
+    const firstItem = response[0];
+    const data = response.filter((item) => item.title === firstItem.title && item.ui_sets && item.ui_sets.caption_subtitle);
 
-    const items = response
-        .filter((item) => item.ui_sets?.caption_subtitle)
-        .slice(0, limit)
-        .map((item) => {
-            const image = item.ui_sets?.cover_landscape_hd_4k ?? item.cover_landscape_hd;
+    // 用于存储生成的HTML字符串
+    var html = '';
 
-            return {
-                title: `${item.ui_sets?.caption_subtitle} - ${item.title}`,
-                link: item.link_share,
-                description: art(path.join(__dirname, 'templates/description.art'), {
-                    images: image
-                        ? [
-                              {
-                                  src: image,
-                                  alt: item.ui_sets?.caption_subtitle ?? item.title,
-                              },
-                          ]
-                        : undefined,
-                    intro: item.content,
-                }),
-                author: item.location,
-                category: item.tags.map((c) => c.name),
-                guid: `idaily-${item.guid}`,
-                pubDate: parseDate(item.pubdate_timestamp, 'X'),
-                updated: parseDate(item.lastupdate_timestamp, 'X'),
-                enclosure_url: image,
-                enclosure_type: `image/${image.split(/\./).pop()}`,
-            };
-        });
+    // 遍历data数组
+    data.forEach(function (item) {
+        // 生成每个项的HTML字符串
+        var itemHtml = `<div><h2>${item.ui_sets.caption_subtitle}</h2>${item.content}<br><img src='${item.cover_landscape}'></div>`;
+
+        // 将当前项的HTML字符串添加到总的HTML字符串中
+        html += itemHtml;
+    });
 
     const { data: currentResponse } = await got(currentUrl);
 
@@ -72,10 +53,16 @@ async function handler(ctx) {
     const image = new URL('img/idaily/logo_2x.png', currentUrl).href;
 
     return {
-        item: items,
-        title,
+        item: [{
+            title: firstItem.title,
+            link: firstItem.link_share,
+            description: firstItem.title,
+            guid: firstItem.link_share,
+            pubDate: new Date(firstItem.pubdate_timestamp * 1000).toUTCString(),
+        }],
+        title: `iDaily 每日环球视野`,
+        description: 'iDaily 每日环球视野',
         link: currentUrl,
-        description: $('meta[name="description"]').prop('content'),
         language: 'zh',
         image,
         subtitle: $('meta[name="keywords"]').prop('content'),
