@@ -195,8 +195,8 @@ dependencies:
     specifier: 0.7.4
     version: 0.7.4
   telegram:
-    specifier: 2.18.26
-    version: 2.18.26
+    specifier: 2.20.15
+    version: 2.20.15
   tiny-async-pool:
     specifier: 2.1.0
     version: 2.1.0
@@ -1168,7 +1168,7 @@ packages:
     engines: {node: '>= 14'}
     dependencies:
       eslint: 8.57.0
-      jschardet: 3.0.0
+      jschardet: 3.1.2
       lodash: 4.17.21
       utf8: 3.0.0
     transitivePeerDependencies:
@@ -1269,7 +1269,7 @@ packages:
       '@babel/runtime-corejs2': 7.24.0
       '@postlight/ci-failed-test-reporter': 1.0.26
       cheerio: 0.22.0
-      difflib: github.com/postlight/difflib.js/32e8e38c7fcd935241b9baab71bb432fd9b166ed
+      difflib: git/github.com+postlight/difflib.js/32e8e38c7fcd935241b9baab71bb432fd9b166ed
       ellipsize: 0.1.0
       iconv-lite: 0.5.0
       moment: 2.29.4
@@ -5734,8 +5734,8 @@ packages:
     resolution: {integrity: sha512-4bYVV3aAMtDTTu4+xsDYa6sy9GyJ69/amsu9sYF2zqjiEoZA5xJi3BrfX3uY+/IekIu7MwdObdbDWpoZdBv3/A==}
     dev: false
 
-  /jschardet@3.0.0:
-    resolution: {integrity: sha512-lJH6tJ77V8Nzd5QWRkFYCLc13a3vADkh3r/Fi8HupZGWk2OVVDfnZP8V/VgQgZ+lzW0kG2UGb5hFgt3V3ndotQ==}
+  /jschardet@3.1.2:
+    resolution: {integrity: sha512-mw3CBZGzW8nUBPYhFU2ztZ/kJ6NClQUQVpyzvFMfznZsoC///ZQ30J2RCUanNsr5yF22LqhgYr/lj807/ZleWA==}
     engines: {node: '>=0.1.90'}
     dev: true
 
@@ -8868,6 +8868,7 @@ packages:
   /socks@2.7.3:
     resolution: {integrity: sha512-vfuYK48HXCTFD03G/1/zkIls3Ebr2YNa4qU9gHDZdblHLiqhJrJGkY3+0Nx0JpN9qBhJbVObc1CNciT1bIZJxw==}
     engines: {node: '>= 10.0.0', npm: '>= 3.0.0'}
+    deprecated: please use 2.7.4 or 2.8.1 to fix package-lock issue
     dependencies:
       ip-address: 9.0.5
       smart-buffer: 4.2.0
@@ -9227,8 +9228,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /telegram@2.18.26:
-    resolution: {integrity: sha512-W05ltjndq/xj4yFG77ttaUDmm+ywJFlNV1WVYm63ptRg2UXyhkq0RZuwshvNdYLA2ic2Re9VqZpg5c9ySeDouw==}
+  /telegram@2.20.15:
+    resolution: {integrity: sha512-yc5ScUlg5X47z9BhGTJEaHqSYe8cGsyjUHw1+vGD2vj9ntrbp2C/YpOvP0cepTJk/k5xJ39ZJeFY0xQzkk/LMg==}
     dependencies:
       '@cryptography/aes': 0.1.1
       async-mutex: 0.3.2
@@ -10208,8 +10209,8 @@ packages:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: true
 
-  github.com/postlight/difflib.js/32e8e38c7fcd935241b9baab71bb432fd9b166ed:
-    resolution: {tarball: https://codeload.github.com/postlight/difflib.js/tar.gz/32e8e38c7fcd935241b9baab71bb432fd9b166ed}
+  git/github.com+postlight/difflib.js/32e8e38c7fcd935241b9baab71bb432fd9b166ed:
+    resolution: {commit: 32e8e38c7fcd935241b9baab71bb432fd9b166ed, repo: git@github.com:postlight/difflib.js.git, type: git}
     name: difflib
     version: 0.2.6
     dependencies:
